@@ -26,7 +26,13 @@ cur = conn.cursor()
 # """)
 # conn.commit()
 
-cur.execute("INSERT INTO Employee (ID, NAME, EMAIL) VALUES(2, 'John', 'John@gmail.com')")
-conn.commit()
+# cur.execute("INSERT INTO Employee (ID, NAME, EMAIL) VALUES(2, 'John', 'John@gmail.com')")
+
+cur.execute('SELECT ID, NAME, EMAIL FROM Employee')
+rows = cur.fetchall()
+for data in rows:
+    print(f'name={data[1]} ID={data[0]} Eemail={data[2]}')
+
+# conn.commit()
 conn.close()
 
