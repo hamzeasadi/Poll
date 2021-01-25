@@ -16,7 +16,7 @@ try:
 except Exception:
     print("sth went wrong")
 
-# cur = conn.cursor()
+cur = conn.cursor()
 # cur.execute("""
 # CREATE TABLE Employee(
 # ID INT PRIMARY KEY NOT NULL,
@@ -26,4 +26,7 @@ except Exception:
 # """)
 # conn.commit()
 
+cur.execute("INSERT INTO Employee (ID, NAME, EMAIL) VALUES(2, 'John', 'John@gmail.com')")
+conn.commit()
+conn.close()
 
