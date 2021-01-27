@@ -48,12 +48,12 @@ class Database():
         self.con.close()
 
     def readData(self, tbl_name, *fields):
-        field_list = list(fields)
         field = ", ".join(fields)
         command = f"SELECT {field} FROM {tbl_name}"
         cur = self.con.cursor()
         cur.execute(command)
         rows = cur.fetchall()
+        cur.close()
         return rows
 
 
