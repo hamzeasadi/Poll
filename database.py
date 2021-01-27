@@ -56,6 +56,9 @@ class Database():
         cur.close()
         return rows
 
+    def insertdata(self, tbl_name, **data):
+        pass
+
 
 
 dbman = Database(**db_info)
