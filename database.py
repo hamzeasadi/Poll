@@ -2,16 +2,17 @@ import psycopg2 as pg
 import numpy as np
 
 
-
 db_info = {'database': 'myDatabase', 'user': 'postgres', 'port': '5432',
-           'host': 'localhost', 'password':'hamze95123'}
+           'host': 'localhost', 'password': 'hamze95123'}
 
 tbl_info = {'filed1': 'ID INT PRIMARY KEY NOT NULL', 'filed2': 'NAME TEXT NOT NULL',
             'filed3': 'LAST_NAME TEXT NOT NULL', 'filed4': 'EMAIL TEXT',
             'filed5': 'STUDNET_NUMBER INT NOT NULL'}
 
+
 class Database():
     """we will create a simple a database manipulation class"""
+
     def __init__(self, **db_info):
         super().__init__()
         self.db_info = db_info
@@ -57,7 +58,6 @@ class Database():
         return rows
 
 
-
 dbman = Database(**db_info)
 # dbman.createTable('STUDENT', **tbl_info)
 # dbman.deleteTable('STUDENT')
@@ -66,7 +66,6 @@ dbman = Database(**db_info)
 # rows = dbman.readData('employee', *read_field)
 # for data in rows:
 #     print(f'name={data[1]} ID={data[0]} Eemail={data[2]}')
-
 
 
 # # cur.execute("INSERT INTO Employee (ID, NAME, EMAIL) VALUES(2, 'John', 'John@gmail.com')")
